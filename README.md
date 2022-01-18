@@ -4,7 +4,7 @@ findNarcissusFrom(people) is a function to find narcissus person in an array of 
 
 
 ## Usage
-The function takes an array of objects as a parameter and return narcissus person name or empty line
+The function takes an array of objects as a parameter and return narcissus person name or empty line if there is no narcissus person in an array
 
 ```javascript
 
