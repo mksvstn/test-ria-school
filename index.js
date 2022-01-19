@@ -1,21 +1,13 @@
 module.exports = function findNarcissusFrom(people) {
   let narcissusName = '';
-  let countKnowsNarc;
+  let whoKnowsNarcissus;
 
-  for (let i = 0; i < people.length; i += 1) {
-    narcissusName = people[i].name;
+  const narcissusPerson = people.find((person) => person.know.length === 0);
 
-    countKnowsNarc = 0;
+  if (narcissusPerson) {
+    whoKnowsNarcissus = people.filter((person) => person.know.includes(narcissusPerson.name));
 
-    for (let k = 0; k < people.length; k += 1) {
-      if (people[k].know.includes(narcissusName)) {
-        countKnowsNarc += 1;
-      }
-    }
-
-    if (countKnowsNarc === people.length - 1 && people[i].know.length === 0) break;
-
-    else narcissusName = '';
+    if (whoKnowsNarcissus.length === people.length - 1) { narcissusName = narcissusPerson.name; }
   }
 
   return narcissusName;
